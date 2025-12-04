@@ -682,7 +682,7 @@
             return (
                 <div className="min-h-screen bg-gray-50 text-gray-800 font-sans pb-12">
                     {/* HEADER */}
-                    <header className="bg-white shadow-sm sticky top-0 z-50">
+                    <header className="bg-white shadow-sm relative md:sticky top-0 z-50">
                         <div className="max-w-7xl mx-auto px-4 py-4 space-y-4">
                             {/* Title & Date Row */}
                             <div className="grid grid-cols-1 md:grid-cols-3 items-center gap-2">
@@ -909,12 +909,12 @@
                                         hover:bg-gray-100
                                     `}
                                 >
-                                    <div className={`p-2 flex justify-between items-start text-sm
+                                    <div className={`p-1 md:p-2 flex justify-between items-start text-sm
                                         ${isHoliday ? 'text-red-600' : 'text-gray-700'}
                                     `}>
-                                        <span className={`font-bold text-lg leading-none`}>{day}</span>
+                                        <span className={`font-bold text-base md:text-lg leading-none`}>{day}</span>
                                         {holidayName && (
-                                            <span className="text-[10px] md:text-xs bg-red-100 text-red-600 px-1.5 py-0.5 rounded ml-1 text-right leading-tight">
+                                            <span className="text-[9px] md:text-xs bg-red-100 text-red-600 px-1 py-0.5 rounded ml-1 text-center md:text-right leading-none md:leading-tight max-w-[60px] md:max-w-none truncate">
                                                 {holidayName}
                                             </span>
                                         )}
