@@ -252,11 +252,7 @@
             { date: '2026-03-28', home: 'monkey', away: 'brothers' },
             { date: '2026-03-29', home: 'monkey', away: 'dragon' },
             { date: '2026-03-29', home: 'brothers', away: 'guardians' },
-            { date: '2026-03-29', home: 'lions', away: 'hawks' },
-            { date: '2026-03-30', home: 'brothers', away: 'dragon' },
-            { date: '2026-03-30', home: 'monkey', away: 'hawks' },
-            { date: '2026-03-30', home: 'lions', away: 'guardians' },
-            { date: '2026-03-31', home: 'brothers', away: 'dragon' },
+            { date: '2026-03-29', home: 'lions', away: 'hawks' },            { date: '2026-03-31', home: 'brothers', away: 'dragon' },
             { date: '2026-03-31', home: 'monkey', away: 'hawks' },
             { date: '2026-03-31', home: 'lions', away: 'guardians' },
             { date: '2026-04-01', home: 'brothers', away: 'dragon' },
@@ -701,13 +697,14 @@
                             ${months[idx]}
                         </div>
                         <div class="calendar-header">
-                            <div>日</div><div>一</div><div>二</div><div>三</div><div>四</div><div>五</div><div>六</div>
+                            <div>一</div><div>二</div><div>三</div><div>四</div><div>五</div><div>六</div><div>日</div>
                         </div>
                         <div class="calendar-grid">
                 `;
 
-                // Empty cells before month starts
-                for (let i = 0; i < startWeekday; i++) {
+                // Empty cells before month starts (adjust for Monday start)
+                const adjustedStartWeekday = (startWeekday === 0) ? 6 : startWeekday - 1;
+                for (let i = 0; i < adjustedStartWeekday; i++) {
                     calendarHTML += '<div class="calendar-day"></div>';
                 }
 
